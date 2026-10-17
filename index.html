@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanna Khan | Cloud & DevOps Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Sanna Khan - Aspiring Cloud & DevOps Engineer, Amazon Intern, AWS, Terraform, Docker, Linux, and Cloud Infrastructure Specialist.">
+  <meta name="keywords" content="Sanna Khan, Cloud Engineer, DevOps, AWS, Terraform, Docker, Linux, Portfolio, Amazon Intern">
+  <meta name="author" content="Sanna Khan">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300f2fe'><path d='M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z'/></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Canvas for Interactive Network Simulation -->
+  <canvas id="cloud-network-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Glow Elements -->
+  <div class="ambient-glow glow-cyan" aria-hidden="true"></div>
+  <div class="ambient-glow glow-amber" aria-hidden="true"></div>
+  <div class="ambient-glow glow-purple" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper" id="navbar">
+    <nav class="navbar container" aria-label="Main Navigation">
+      <a href="#hero" class="nav-brand" aria-label="Sanna Khan Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" stroke="url(#brandGrad)"/>
+            <defs>
+              <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00f2fe"/>
+                <stop offset="100%" stop-color="#4facfe"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="brand-text">SANNA<span class="accent-dot">.</span><span class="brand-sub">CLOUD</span></span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#architecture" class="nav-link">Cloud Lab</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#certifications" class="nav-link">Credentials</a></li>
+        <li><a href="#terminal-section" class="nav-link">Terminal</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Action Tools (Sound, Theme, Resume CTA) -->
+      <div class="nav-actions">
+        <button id="soundToggle" class="icon-btn" aria-label="Toggle Sound Effects" title="Sound Effects (Synthesizer Audio)">
+          <svg class="sound-on-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+          <svg class="sound-off-icon hidden" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon hidden" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button id="openResumeBtn" class="btn btn-outline btn-sm">
+          <span>Resume</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </button>
+
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <!-- Status Badge -->
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span class="badge-text">Available for Cloud & DevOps Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="greeting">Hello, I'm</span>
+            <span class="name-gradient">SANNA KHAN</span>
+          </h1>
+
+          <div class="typing-container">
+            <span class="terminal-prompt">$</span>
+            <span class="typing-text" id="typingText"></span>
+            <span class="typing-cursor"></span>
+          </div>
+
+          <p class="hero-description">
+            Passionate Cloud Engineer & BCA student with industry internship experience at <strong>Amazon</strong>. 
+            Specializing in architecting highly resilient AWS infrastructure, automated CI/CD workflows, 
+            Terraform Infrastructure as Code (IaC), and rock-solid Linux server administration.
+          </p>
+
+          <!-- CTAs -->
+          <div class="hero-cta-group">
+            <a href="#experience" class="btn btn-primary">
+              <span>View Experience</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#architecture" class="btn btn-glass">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+              <span>Explore Cloud Lab</span>
+            </a>
+            <a href="#terminal-section" class="btn btn-terminal-pill">
+              <span class="pill-dot"></span>
+              <span>CLI Terminal</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Ribbon -->
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <span class="metric-value">Amazon</span>
+              <span class="metric-label">Cloud & DevOps Intern</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-card">
+              <span class="metric-value">12+</span>
+              <span class="metric-label">AWS Cloud Services</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-card">
+              <span class="metric-value">JK-CCCE</span>
+              <span class="metric-label">Cloud & AI Certified</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-card">
+              <span class="metric-value">99.9%</span>
+              <span class="metric-label">Reliability Mindset</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Avatar & Floating Architecture Badges -->
+        <div class="hero-visual">
+          <div class="visual-card-wrapper" id="heroTiltCard">
+            <div class="visual-card">
+              <div class="visual-image-frame">
+                <img src="assets/avatar.jpg" alt="Sanna Khan - Cloud and DevOps Engineer" class="avatar-img" id="avatarImg" loading="eager">
+                <div class="avatar-overlay-gradient"></div>
+                <div class="radar-scan-line"></div>
+              </div>
+
+              <!-- Floating Cloud Architecture Pills -->
+              <div class="floating-badge badge-aws" data-speed="1.2">
+                <div class="badge-icon aws-glow">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+                  </svg>
+                </div>
+                <div class="badge-info">
+                  <span class="b-title">AWS Cloud</span>
+                  <span class="b-desc">EC2 • S3 • VPC • ALB</span>
+                </div>
+              </div>
+
+              <div class="floating-badge badge-terraform" data-speed="0.8">
+                <div class="badge-icon tf-glow">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M2.5 4.5l5.5 3.2v6.4l-5.5-3.2zm6.5 3.8l5.5-3.2v6.4l-5.5 3.2zm6.5-3.8l5.5 3.2v6.4l-5.5-3.2zm-6.5 10.2l5.5-3.2v6.4l-5.5 3.2z"/>
+                  </svg>
+                </div>
+                <div class="badge-info">
+                  <span class="b-title">Terraform</span>
+                  <span class="b-desc">IaC Automation</span>
+                </div>
+              </div>
+
+              <div class="floating-badge badge-docker" data-speed="1.5">
+                <div class="badge-icon docker-glow">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M13.98 11.08h1.66V9.42h-1.66v1.66zm-2.02 0h1.66V9.42h-1.66v1.66zm-2.02 0h1.66V9.42H9.94v1.66zm-2.02 0h1.66V9.42H7.92v1.66zm-2.02 0h1.66V9.42H5.9v1.66zm8.08-2.02h1.66V7.4h-1.66v1.66zm-2.02 0h1.66V7.4h-1.66v1.66zm-2.02 0h1.66V7.4H9.94v1.66zm6.06-2.02h1.66V5.38H13.98v1.66z"/>
+                  </svg>
+                </div>
+                <div class="badge-info">
+                  <span class="b-title">Docker</span>
+                  <span class="b-desc">Containerization</span>
+                </div>
+              </div>
+
+              <div class="floating-badge badge-linux" data-speed="1.1">
+                <div class="badge-icon linux-glow">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="4 17 10 11 4 5"></polyline>
+                    <line x1="12" y1="19" x2="20" y2="19"></line>
+                  </svg>
+                </div>
+                <div class="badge-info">
+                  <span class="b-title">Linux SysAdmin</span>
+                  <span class="b-desc">Servers & Shells</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About Section">
+        <span class="scroll-mouse">
+          <span class="scroll-wheel"></span>
+        </span>
+        <span class="scroll-text">EXPLORE</span>
+      </a>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Overview</span>
+          <h2 class="section-title">Career Objective & Background</h2>
+          <p class="section-subtitle">Bridging academic computing foundations with production cloud engineering</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Main Narrative Card -->
+          <div class="about-card glass-panel main-narrative">
+            <div class="card-glow-edge"></div>
+            <div class="narrative-badge">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 16v-4"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+              <span>Professional Summary</span>
+            </div>
+            <h3 class="narrative-heading">
+              Motivated BCA student and aspiring Cloud Engineer with hands-on enterprise internship experience.
+            </h3>
+            <p class="narrative-text">
+              Driven by a deep passion for <strong>Cloud Computing, AWS Architecture, Linux Administration, Networking, and DevOps automation</strong>.
+              Currently pursuing a Bachelor of Computer Applications (BCA) in Patna (2025–2028), combined with rigorous professional diplomas 
+              in Cloud Computing with AI from Jetking and DevOps training from Fluxti Technologies.
+            </p>
+            <p class="narrative-text">
+              During my internship at <strong>Amazon</strong> (Jan 2026 – June 2026), I contributed directly to provisioning AWS resources, 
+              orchestrating CI/CD pipelines, containerizing services via Docker, writing Terraform IaC templates, and resolving system-level Linux issues. 
+              I am seeking an entry-level Cloud or DevOps role where I can deliver high availability, reduce manual friction, and continuously scale enterprise infrastructure.
+            </p>
+
+            <div class="narrative-actions">
+              <a href="#contact" class="btn btn-primary btn-sm">Get in Touch</a>
+              <button class="btn btn-outline btn-sm" onclick="app.copyEmail()">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>sannak9411@gmail.com</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Stats & Pillars Column -->
+          <div class="about-pillars">
+            <div class="pillar-card glass-panel">
+              <div class="pillar-icon icon-cyan">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h4>Cloud Infrastructure</h4>
+                <p>Architecting multi-tier AWS environments using EC2, S3, VPC subnets, RDS, Route 53, and Auto Scaling.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card glass-panel">
+              <div class="pillar-icon icon-amber">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h4>Infrastructure as Code & CI/CD</h4>
+                <p>Codifying cloud infrastructure through declarative Terraform scripts and streamlining automated build/deploy workflows.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card glass-panel">
+              <div class="pillar-icon icon-purple">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                  <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                  <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                  <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h4>Linux & Enterprise Systems</h4>
+                <p>Hardening servers, user & permission hierarchy, package configurations, systemd services, and shell troubleshooting.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card glass-panel">
+              <div class="pillar-icon icon-green">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="pillar-content">
+                <h4>Quick Learner & High Adaptability</h4>
+                <p>Fast-paced problem solver with strong communication, active team collaboration, and time management skills.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="section experience-section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Work History</span>
+          <h2 class="section-title">Industry Experience</h2>
+          <p class="section-subtitle">Hands-on production cloud operations and DevOps engineering</p>
+        </div>
+
+        <div class="experience-timeline">
+          <!-- Amazon Card -->
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <div class="marker-dot"></div>
+              <div class="marker-line"></div>
+            </div>
+
+            <div class="timeline-card glass-panel featured-company-card">
+              <div class="company-header">
+                <div class="company-logo-badge amazon-badge">
+                  <span class="amazon-text">amazon</span>
+                  <span class="badge-verified" title="Verified Internship">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </span>
+                </div>
+
+                <div class="role-meta">
+                  <h3 class="role-title">Cloud and DevOps Intern</h3>
+                  <div class="role-details">
+                    <span class="company-name">Amazon</span>
+                    <span class="role-period">January 2026 – June 2026</span>
+                    <span class="role-badge">6 Months • Full-Time Internship</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="role-body">
+                <p class="role-lead">
+                  Worked within the engineering and cloud infrastructure team to manage, automate, and monitor AWS multi-service environments, supporting scalable cloud delivery pipelines and high-reliability server performance.
+                </p>
+
+                <h4 class="subhead">Core Contributions & Responsibilities:</h4>
+                <ul class="duties-list">
+                  <li>
+                    <div class="duty-icon">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="duty-text">
+                      <strong>AWS Cloud Infrastructure Management:</strong> Assisted in provisioning, configuring, and managing resilient AWS cloud infrastructure components including EC2 instances, S3 storage buckets, VPC networking, IAM security policies, and CloudWatch metrics.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="duty-icon">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="duty-text">
+                      <strong>CI/CD Pipelines & Containerization:</strong> Supported the engineering team in setting up continuous integration and delivery pipelines, building and packaging microservices using Docker containers for portable, predictable deployments.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="duty-icon">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="duty-text">
+                      <strong>Infrastructure as Code (IaC):</strong> Authored modular Terraform configuration scripts to automate environment spin-up, minimize manual drift, and enable reproducible infrastructure states across staging and test environments.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="duty-icon">
+                      <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    </div>
+                    <div class="duty-text">
+                      <strong>Linux Administration & System Diagnostics:</strong> Performed routine Linux server administration, user permissions management, package patching, log inspection, and troubleshooting to maintain peak performance and uptime.
+                    </div>
+                  </li>
+                </ul>
+
+                <div class="tech-stack-pills">
+                  <span class="tech-tag">AWS EC2</span>
+                  <span class="tech-tag">AWS S3</span>
+                  <span class="tech-tag">AWS VPC</span>
+                  <span class="tech-tag">Terraform</span>
+                  <span class="tech-tag">Docker</span>
+                  <span class="tech-tag">CI/CD</span>
+                  <span class="tech-tag">Linux / Bash</span>
+                  <span class="tech-tag">CloudWatch</span>
+                  <span class="tech-tag">Git</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CLOUD & DEVOPS LAB (ARCHITECTURE VISUALIZER) -->
+    <section class="section architecture-section" id="architecture">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interactive Showcase</span>
+          <h2 class="section-title">Cloud & DevOps Architecture Lab</h2>
+          <p class="section-subtitle">Interact with live simulated AWS architectures, CI/CD pipelines, and Linux server metrics</p>
+        </div>
+
+        <div class="lab-container glass-panel">
+          <!-- Lab Navigation Tabs -->
+          <div class="lab-tabs" role="tablist">
+            <button class="lab-tab-btn active" data-tab="aws-arch" role="tab" aria-selected="true">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              <span>AWS High-Availability VPC</span>
+            </button>
+            <button class="lab-tab-btn" data-tab="cicd-pipeline" role="tab" aria-selected="false">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              <span>Automated CI/CD Pipeline</span>
+            </button>
+            <button class="lab-tab-btn" data-tab="linux-health" role="tab" aria-selected="false">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+              <span>Linux Server Health Monitor</span>
+            </button>
+          </div>
+
+          <!-- TAB 1: AWS VPC ARCHITECTURE -->
+          <div class="lab-tab-content active" id="tab-aws-arch" role="tabpanel">
+            <div class="lab-toolbar">
+              <div class="toolbar-title">
+                <span class="status-indicator-green"></span>
+                <span>AWS Architecture: Multi-AZ Fault-Tolerant Web Tier (Click any node to inspect)</span>
+              </div>
+              <div class="toolbar-controls">
+                <button class="btn btn-xs btn-outline" id="simulateTrafficBtn">Simulate Traffic Surge</button>
+                <button class="btn btn-xs btn-outline" id="resetArchBtn">Reset Nodes</button>
+              </div>
+            </div>
+
+            <div class="arch-canvas-layout">
+              <!-- Interactive Architecture Diagram -->
+              <div class="arch-diagram" id="archDiagram">
+                <!-- Internet / Users -->
+                <div class="arch-node-group client-group">
+                  <div class="arch-node node-client" data-node="client" tabindex="0">
+                    <div class="node-icon">
+                      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <span class="node-title">Public Web Traffic</span>
+                    <span class="node-tag">Global Users</span>
+                  </div>
+                </div>
+
+                <div class="arch-flow-arrow horizontal">
+                  <div class="arrow-packet"></div>
+                </div>
+
+                <!-- Route 53 DNS -->
+                <div class="arch-node-group dns-group">
+                  <div class="arch-node node-route53" data-node="route53" tabindex="0">
+                    <div class="node-icon">
+                      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <span class="node-title">Route 53</span>
+                    <span class="node-tag">DNS / Latency Routing</span>
+                  </div>
+                </div>
+
+                <div class="arch-flow-arrow horizontal">
+                  <div class="arrow-packet"></div>
+                </div>
+
+                <!-- AWS VPC Boundary -->
+                <div class="vpc-boundary">
+                  <div class="vpc-header">
+                    <span class="vpc-title">AWS VPC (10.0.0.0/16) - Production Region (ap-south-1)</span>
+                    <span class="vpc-badge">Security Groups & IAM Hardened</span>
+                  </div>
+
+                  <div class="vpc-grid">
+                    <!-- ALB -->
+                    <div class="arch-node node-alb" data-node="alb" tabindex="0">
+                      <div class="node-icon">
+                        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"/></svg>
+                      </div>
+                      <span class="node-title">Application Load Balancer</span>
+                      <span class="node-tag">SSL Termination • Health Checks</span>
+                    </div>
+
+                    <!-- Split AZs -->
+                    <div class="az-columns">
+                      <!-- AZ 1 -->
+                      <div class="az-box">
+                        <span class="az-label">Availability Zone A (ap-south-1a)</span>
+                        <div class="arch-node node-ec2" data-node="ec2-a" tabindex="0">
+                          <div class="node-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/></svg>
+                          </div>
+                          <span class="node-title">EC2 Auto Scaling Instance</span>
+                          <span class="node-tag">Docker App • Nginx</span>
+                        </div>
+                      </div>
+
+                      <!-- AZ 2 -->
+                      <div class="az-box">
+                        <span class="az-label">Availability Zone B (ap-south-1b)</span>
+                        <div class="arch-node node-ec2" data-node="ec2-b" tabindex="0">
+                          <div class="node-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/></svg>
+                          </div>
+                          <span class="node-title">EC2 Auto Scaling Instance</span>
+                          <span class="node-tag">Docker App • Nginx</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Storage & Database Tier -->
+                    <div class="storage-tier">
+                      <div class="arch-node node-s3" data-node="s3" tabindex="0">
+                        <div class="node-icon">
+                          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        </div>
+                        <span class="node-title">AWS S3 Bucket</span>
+                        <span class="node-tag">Encrypted Static Assets & Logs</span>
+                      </div>
+
+                      <div class="arch-node node-rds" data-node="rds" tabindex="0">
+                        <div class="node-icon">
+                          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                        </div>
+                        <span class="node-title">Amazon RDS Multi-AZ</span>
+                        <span class="node-tag">Managed DB • Auto Failover</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Node Inspector Detail Box -->
+              <div class="arch-inspector glass-panel" id="nodeInspector">
+                <div class="inspector-header">
+                  <span class="inspector-badge" id="inspectorCategory">AWS Service</span>
+                  <h4 id="inspectorTitle">Select a component</h4>
+                </div>
+                <div class="inspector-body" id="inspectorBody">
+                  <p class="placeholder-tip">Click on Route 53, ALB, EC2, S3, or RDS in the diagram to inspect its configuration parameters, security settings, and how Sanna configures it.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 2: CI/CD & TERRAFORM PIPELINE -->
+          <div class="lab-tab-content" id="tab-cicd-pipeline" role="tabpanel">
+            <div class="cicd-layout">
+              <div class="cicd-header">
+                <div>
+                  <h4 class="cicd-title">End-to-End GitOps, Containerization & IaC Pipeline</h4>
+                  <p class="cicd-desc">Simulate an automated commit triggering Docker build, test verification, Terraform plan/apply, and AWS deployment.</p>
+                </div>
+                <button class="btn btn-primary btn-sm" id="runPipelineBtn">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span>Trigger Pipeline Run</span>
+                </button>
+              </div>
+
+              <!-- Pipeline Steps Progress -->
+              <div class="pipeline-track">
+                <div class="pipeline-step" id="step-git">
+                  <div class="step-num">1</div>
+                  <div class="step-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg>
+                  </div>
+                  <span class="step-name">Git Commit</span>
+                  <span class="step-status" id="status-git">Idle</span>
+                </div>
+
+                <div class="pipeline-connector"><div class="connector-line" id="line-1"></div></div>
+
+                <div class="pipeline-step" id="step-test">
+                  <div class="step-num">2</div>
+                  <div class="step-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                  </div>
+                  <span class="step-name">Lint & Test</span>
+                  <span class="step-status" id="status-test">Idle</span>
+                </div>
+
+                <div class="pipeline-connector"><div class="connector-line" id="line-2"></div></div>
+
+                <div class="pipeline-step" id="step-docker">
+                  <div class="step-num">3</div>
+                  <div class="step-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M13.98 11.08h1.66V9.42h-1.66v1.66zm-2.02 0h1.66V9.42h-1.66v1.66zm-2.02 0h1.66V9.42H9.94v1.66z"/></svg>
+                  </div>
+                  <span class="step-name">Docker Build</span>
+                  <span class="step-status" id="status-docker">Idle</span>
+                </div>
+
+                <div class="pipeline-connector"><div class="connector-line" id="line-3"></div></div>
+
+                <div class="pipeline-step" id="step-terraform">
+                  <div class="step-num">4</div>
+                  <div class="step-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M2.5 4.5l5.5 3.2v6.4l-5.5-3.2zm6.5 3.8l5.5-3.2v6.4l-5.5 3.2z"/></svg>
+                  </div>
+                  <span class="step-name">Terraform IaC</span>
+                  <span class="step-status" id="status-terraform">Idle</span>
+                </div>
+
+                <div class="pipeline-connector"><div class="connector-line" id="line-4"></div></div>
+
+                <div class="pipeline-step" id="step-deploy">
+                  <div class="step-num">5</div>
+                  <div class="step-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  </div>
+                  <span class="step-name">Live on AWS</span>
+                  <span class="step-status" id="status-deploy">Idle</span>
+                </div>
+              </div>
+
+              <!-- Pipeline Output Stream -->
+              <div class="pipeline-log-terminal">
+                <div class="terminal-bar">
+                  <span class="term-dot red"></span>
+                  <span class="term-dot yellow"></span>
+                  <span class="term-dot green"></span>
+                  <span class="term-title">Pipeline Execution Log (actions/runner-linux)</span>
+                </div>
+                <div class="terminal-code" id="pipelineLog">
+                  <p class="log-line text-muted">[System] Pipeline ready. Click "Trigger Pipeline Run" to simulate real-time deployment output...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: LINUX SERVER HEALTH MONITOR -->
+          <div class="lab-tab-content" id="tab-linux-health" role="tabpanel">
+            <div class="linux-dashboard">
+              <div class="dash-row metrics-grid">
+                <div class="dash-card">
+                  <span class="dash-label">CPU Load (4 vCPUs)</span>
+                  <div class="dash-val-row">
+                    <span class="dash-val" id="cpuVal">18%</span>
+                    <span class="dash-sub text-green">Optimal</span>
+                  </div>
+                  <div class="dash-meter-bar"><div class="meter-fill" id="cpuFill" style="width: 18%;"></div></div>
+                </div>
+
+                <div class="dash-card">
+                  <span class="dash-label">Memory Usage (8 GB)</span>
+                  <div class="dash-val-row">
+                    <span class="dash-val" id="memVal">2.34 GB</span>
+                    <span class="dash-sub">29.2%</span>
+                  </div>
+                  <div class="dash-meter-bar"><div class="meter-fill" id="memFill" style="width: 29.2%;"></div></div>
+                </div>
+
+                <div class="dash-card">
+                  <span class="dash-label">System Uptime</span>
+                  <div class="dash-val-row">
+                    <span class="dash-val">42d 16h 24m</span>
+                    <span class="dash-sub text-cyan">99.99%</span>
+                  </div>
+                  <span class="dash-foot">Kernel: Linux 6.1.0-aws-amd64</span>
+                </div>
+
+                <div class="dash-card">
+                  <span class="dash-label">Active Containers</span>
+                  <div class="dash-val-row">
+                    <span class="dash-val text-cyan">6 / 6</span>
+                    <span class="dash-sub text-green">All Healthy</span>
+                  </div>
+                  <span class="dash-foot">Docker Engine v24.0.7</span>
+                </div>
+              </div>
+
+              <!-- Services Table -->
+              <div class="services-status-card glass-panel">
+                <div class="services-header">
+                  <h4>Managed Daemon & Service Status</h4>
+                  <span class="badge-live-pulse">Live Polling</span>
+                </div>
+                <div class="services-table-wrapper">
+                  <table class="services-table">
+                    <thead>
+                      <tr>
+                        <th>Service / Daemon</th>
+                        <th>Type</th>
+                        <th>State</th>
+                        <th>Port / Binding</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>nginx.service</strong></td>
+                        <td>Reverse Proxy & Web Server</td>
+                        <td><span class="badge-status-active">active (running)</span></td>
+                        <td>0.0.0.0:80, :443</td>
+                        <td><button class="btn btn-tiny" onclick="app.restartService('nginx')">Restart</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>docker.service</strong></td>
+                        <td>Container Runtime Daemon</td>
+                        <td><span class="badge-status-active">active (running)</span></td>
+                        <td>/var/run/docker.sock</td>
+                        <td><button class="btn btn-tiny" onclick="app.restartService('docker')">Restart</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>sshd.service</strong></td>
+                        <td>OpenSSH Remote Shell Daemon</td>
+                        <td><span class="badge-status-active">active (running)</span></td>
+                        <td>Port 22 (Key Pair Auth Only)</td>
+                        <td><button class="btn btn-tiny" onclick="app.restartService('sshd')">Status</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong>amazon-cloudwatch-agent</strong></td>
+                        <td>Telemetry & Metrics Exporter</td>
+                        <td><span class="badge-status-active">active (running)</span></td>
+                        <td>UDP 8125 (StatsD)</td>
+                        <td><button class="btn btn-tiny" onclick="app.restartService('cloudwatch')">Export Logs</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED CLOUD & DEVOPS PROJECTS -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Production Work</span>
+          <h2 class="section-title">Featured Cloud & DevOps Projects</h2>
+          <p class="section-subtitle">Real-world infrastructure implementations built with AWS, Terraform, Docker, and Linux</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Multi-AZ AWS Infrastructure Automation -->
+          <div class="project-card glass-panel">
+            <div class="project-banner banner-aws">
+              <div class="banner-badge">Infrastructure as Code</div>
+              <div class="banner-icons">
+                <span class="p-icon" title="AWS">AWS</span>
+                <span class="p-icon" title="Terraform">Terraform</span>
+                <span class="p-icon" title="GitHub Actions">CI/CD</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-row">
+                <span class="proj-type">AWS Architecture</span>
+                <span class="proj-metric">99.99% Availability</span>
+              </div>
+
+              <h3 class="project-title">Automated Multi-AZ AWS Cloud Infrastructure with Terraform</h3>
+              <p class="project-desc">
+                Architected and deployed a multi-tier, fault-tolerant AWS environment using modular Terraform scripts. Provisions customized VPC with public and private subnets across two Availability Zones, an Application Load Balancer with SSL offloading, Auto Scaling EC2 fleet running containerized apps, and an Amazon RDS Multi-AZ database with automated snapshots.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Zero-drift state management via S3 remote backend & DynamoDB state locking</span>
+                </div>
+                <div class="highlight-item">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Target Tracking Auto Scaling triggered by CloudWatch CPU metrics</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="p-tag">Terraform</span>
+                <span class="p-tag">AWS VPC</span>
+                <span class="p-tag">ALB</span>
+                <span class="p-tag">Auto Scaling</span>
+                <span class="p-tag">RDS Multi-AZ</span>
+                <span class="p-tag">S3 KMS</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="btn btn-outline btn-sm" onclick="app.openProjectModal('proj-terraform')">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>Inspect Architecture & Code</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Microservices Containerization & Nginx Reverse Proxy -->
+          <div class="project-card glass-panel">
+            <div class="project-banner banner-docker">
+              <div class="banner-badge">Containerization</div>
+              <div class="banner-icons">
+                <span class="p-icon" title="Docker">Docker</span>
+                <span class="p-icon" title="Nginx">Nginx</span>
+                <span class="p-icon" title="Linux">Linux</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-row">
+                <span class="proj-type">DevOps & Containers</span>
+                <span class="proj-metric">Zero-Downtime Deploy</span>
+              </div>
+
+              <h3 class="project-title">Microservices Containerization & Blue/Green Nginx Deployments</h3>
+              <p class="project-desc">
+                Containerized a multi-tier microservices platform using Docker multi-stage builds to minimize image sizes by 65%. Configured Nginx as a high-performance reverse proxy and API gateway with SSL termination, automated gzip compression, custom caching policies, and an upstream blue/green switching script for instant zero-downtime rollouts.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Docker multi-stage builds reduced attack surface and artifact sizes</span>
+                </div>
+                <div class="highlight-item">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Nginx upstream load balancing with active health checks</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="p-tag">Docker</span>
+                <span class="p-tag">Docker Compose</span>
+                <span class="p-tag">Nginx</span>
+                <span class="p-tag">Reverse Proxy</span>
+                <span class="p-tag">Blue/Green</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="btn btn-outline btn-sm" onclick="app.openProjectModal('proj-docker')">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>Inspect Architecture & Code</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Enterprise Linux Automated Backup & Hardening Suite -->
+          <div class="project-card glass-panel">
+            <div class="project-banner banner-linux">
+              <div class="banner-badge">Linux Automation</div>
+              <div class="banner-icons">
+                <span class="p-icon" title="Linux">Linux</span>
+                <span class="p-icon" title="Bash">Bash</span>
+                <span class="p-icon" title="AWS S3">AWS S3</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-row">
+                <span class="proj-type">SysAdmin & Security</span>
+                <span class="proj-metric">Automated Daily Sync</span>
+              </div>
+
+              <h3 class="project-title">Enterprise Linux Server Hardening & Automated S3 Backup Suite</h3>
+              <p class="project-desc">
+                Engineered an automated bash scripting suite for enterprise Linux distributions (Ubuntu/Amazon Linux). Features automated SSH hardening (key-only authentication, port remapping, fail2ban rate-limiting), automated system user audit checks, and a daily scheduled cron script that compresses database dumps, encrypts them via GPG, and transfers them to Amazon S3 with automated retention policies.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>AES-256 GPG encryption for all offsite backup archives</span>
+                </div>
+                <div class="highlight-item">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Systemd timers and automated failure alerts via mailx</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="p-tag">Linux / Bash</span>
+                <span class="p-tag">Systemd</span>
+                <span class="p-tag">Cron</span>
+                <span class="p-tag">AWS CLI</span>
+                <span class="p-tag">GPG</span>
+                <span class="p-tag">Hardening</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="btn btn-outline btn-sm" onclick="app.openProjectModal('proj-linux')">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>Inspect Architecture & Code</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: CloudWatch Telemetry & SNS Incident Alerting Pipeline -->
+          <div class="project-card glass-panel">
+            <div class="project-banner banner-cloudwatch">
+              <div class="banner-badge">Monitoring & Observability</div>
+              <div class="banner-icons">
+                <span class="p-icon" title="CloudWatch">CloudWatch</span>
+                <span class="p-icon" title="SNS">SNS</span>
+                <span class="p-icon" title="Python">Python/Bash</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-meta-row">
+                <span class="proj-type">Observability</span>
+                <span class="proj-metric">&lt; 60s Detection</span>
+              </div>
+
+              <h3 class="project-title">Centralized AWS CloudWatch Monitoring & Incident Alerting Pipeline</h3>
+              <p class="project-desc">
+                Constructed a full-spectrum telemetry exporter collecting server performance metrics (disk I/O saturation, network buffer drops, HTTP 5xx error spikes) using the Amazon CloudWatch Agent. Integrated dynamic alarms linked to Amazon SNS topics to immediately notify on-call engineering teams via SMS and email when SLA thresholds are breached.
+              </p>
+
+              <div class="project-highlights">
+                <div class="highlight-item">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Custom CloudWatch dashboard with real-time composite metrics</span>
+                </div>
+                <div class="highlight-item">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>SNS multi-channel alerts with automated auto-scaling trigger</span>
+                </div>
+              </div>
+
+              <div class="project-tags">
+                <span class="p-tag">CloudWatch</span>
+                <span class="p-tag">AWS SNS</span>
+                <span class="p-tag">Metrics & Alarms</span>
+                <span class="p-tag">Telemetry</span>
+                <span class="p-tag">Incident Response</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="btn btn-outline btn-sm" onclick="app.openProjectModal('proj-monitor')">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span>Inspect Architecture & Code</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Core Competencies</span>
+          <h2 class="section-title">Technical Skills Matrix</h2>
+          <p class="section-subtitle">Categorized breakdown of cloud, DevOps, administration, and systems knowledge</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="skills-filter-row">
+          <button class="filter-chip active" data-filter="all">All Skills</button>
+          <button class="filter-chip" data-filter="cloud">Cloud Computing (AWS)</button>
+          <button class="filter-chip" data-filter="devops">DevOps & Server</button>
+          <button class="filter-chip" data-filter="linux">Linux Administration</button>
+          <button class="filter-chip" data-filter="networking">Networking & OS</button>
+          <button class="filter-chip" data-filter="troubleshooting">Troubleshooting & Tools</button>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Cloud Computing: AWS -->
+          <div class="skill-category-card glass-panel" data-category="cloud">
+            <div class="category-header">
+              <div class="cat-icon icon-aws">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+              </div>
+              <div>
+                <h3 class="cat-title">Cloud Computing (AWS)</h3>
+                <span class="cat-count">10+ Managed Services</span>
+              </div>
+            </div>
+
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Amazon EC2 & Auto Scaling</span>
+                  <span class="skill-pct">92%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+                <span class="skill-note">Instance sizing, AMIs, launch templates, scaling policies</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">AWS S3 & EBS Storage</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                <span class="skill-note">Bucket policies, lifecycle rules, EBS volume snapshots</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">AWS VPC & Networking</span>
+                  <span class="skill-pct">88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+                <span class="skill-note">Public/Private subnets, Route Tables, Internet Gateways, NAT, SG</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">IAM & Security Policies</span>
+                  <span class="skill-pct">89%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 89%;"></div></div>
+                <span class="skill-note">Least-privilege roles, policies, MFA, cross-service access</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Application Load Balancer (ALB)</span>
+                  <span class="skill-pct">86%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 86%;"></div></div>
+                <span class="skill-note">Target groups, path routing, health checks, HTTPS listener</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Amazon RDS & CloudWatch</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+                <span class="skill-note">Relational DB instances, alarms, metrics, logs dashboard</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DevOps & Server -->
+          <div class="skill-category-card glass-panel" data-category="devops">
+            <div class="category-header">
+              <div class="cat-icon icon-devops">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <div>
+                <h3 class="cat-title">DevOps & Server</h3>
+                <span class="cat-count">Automation & CI/CD</span>
+              </div>
+            </div>
+
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Terraform (IaC)</span>
+                  <span class="skill-pct">87%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 87%;"></div></div>
+                <span class="skill-note">Variables, modules, remote state, plan & apply workflows</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Docker & Containerization</span>
+                  <span class="skill-pct">88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+                <span class="skill-note">Dockerfiles, multi-stage builds, compose, container volumes</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Git & GitHub</span>
+                  <span class="skill-pct">92%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+                <span class="skill-note">Branching strategies, PR reviews, merge conflict resolution</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">CI/CD Pipeline Basics</span>
+                  <span class="skill-pct">84%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 84%;"></div></div>
+                <span class="skill-note">Automated build, test triggers, artifact packaging</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Nginx & Apache Web Servers</span>
+                  <span class="skill-pct">86%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 86%;"></div></div>
+                <span class="skill-note">Reverse proxying, virtual hosts, SSL certs, performance tuning</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Server Fundamentals</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                <span class="skill-note">Client-server architecture, ports, sockets, systemd services</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Linux Administration -->
+          <div class="skill-category-card glass-panel" data-category="linux">
+            <div class="category-header">
+              <div class="cat-icon icon-linux">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              </div>
+              <div>
+                <h3 class="cat-title">Linux Administration</h3>
+                <span class="cat-count">Enterprise Server Ops</span>
+              </div>
+            </div>
+
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">User & Permission Management</span>
+                  <span class="skill-pct">94%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 94%;"></div></div>
+                <span class="skill-note">chmod, chown, sudoers, useradd, group permissions, umask</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">File & Directory Management</span>
+                  <span class="skill-pct">95%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 95%;"></div></div>
+                <span class="skill-note">FHS hierarchy, symlinks, grep, sed, awk, find, tar</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Package Management</span>
+                  <span class="skill-pct">92%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+                <span class="skill-note">apt, yum, dnf, repository configurations, dependency resolution</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Bash Shell Commands & Automation</span>
+                  <span class="skill-pct">89%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 89%;"></div></div>
+                <span class="skill-note">Shell scripting, cron jobs, environment variables, I/O redirection</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">System Performance Troubleshooting</span>
+                  <span class="skill-pct">88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 88%;"></div></div>
+                <span class="skill-note">top, htop, df, du, netstat, journalctl, dmesg analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Networking & Virtualization -->
+          <div class="skill-category-card glass-panel" data-category="networking">
+            <div class="category-header">
+              <div class="cat-icon icon-network">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              </div>
+              <div>
+                <h3 class="cat-title">Networking & Virtualization</h3>
+                <span class="cat-count">Infrastructure Core</span>
+              </div>
+            </div>
+
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">TCP/IP & OSI Model</span>
+                  <span class="skill-pct">93%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 93%;"></div></div>
+                <span class="skill-note">Layered architectures, packet headers, 3-way handshake</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">IP Subnetting & CIDR</span>
+                  <span class="skill-pct">91%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 91%;"></div></div>
+                <span class="skill-note">IPv4 calculation, VLSM, network/broadcast address allocation</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">DNS, DHCP & NAT Protocols</span>
+                  <span class="skill-pct">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div>
+                <span class="skill-note">A/CNAME records, dynamic leases, port forwarding, NAT gateways</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Virtual Machines & Hypervisors</span>
+                  <span class="skill-pct">87%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 87%;"></div></div>
+                <span class="skill-note">Type-1 & Type-2 virtualization, guest OS isolation, snapshots</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Routers & Switches Concepts</span>
+                  <span class="skill-pct">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 85%;"></div></div>
+                <span class="skill-note">Packet routing, MAC tables, default gateways, VLAN fundamentals</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Troubleshooting & Hardware/OS -->
+          <div class="skill-category-card glass-panel" data-category="troubleshooting">
+            <div class="category-header">
+              <div class="cat-icon icon-amber">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <div>
+                <h3 class="cat-title">Diagnostics & Troubleshooting</h3>
+                <span class="cat-count">System Configuration</span>
+              </div>
+            </div>
+
+            <div class="skill-items-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Hardware & Software Diagnostics</span>
+                  <span class="skill-pct">92%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 92%;"></div></div>
+                <span class="skill-note">Root cause analysis, boot error isolation, disk checks</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">BIOS / UEFI Diagnostics & Setup</span>
+                  <span class="skill-pct">89%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 89%;"></div></div>
+                <span class="skill-note">Boot sequence, secure boot, firmware updates, hardware detection</span>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name">Windows OS Installation & Config</span>
+                  <span class="skill-pct">94%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" style="width: 94%;"></div></div>
+                <span class="skill-note">Enterprise install, drivers, sysprep, event viewer, services</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Areas of Interest & Personal Strengths -->
+          <div class="skill-category-card glass-panel" data-category="devops">
+            <div class="category-header">
+              <div class="cat-icon icon-green">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              </div>
+              <div>
+                <h3 class="cat-title">Areas of Interest & Soft Skills</h3>
+                <span class="cat-count">Professional Strengths</span>
+              </div>
+            </div>
+
+            <div class="tags-container">
+              <div class="interest-block">
+                <h4 class="sub-interest-title">Areas of Interest</h4>
+                <div class="tag-cloud">
+                  <span class="interest-tag">☁️ Cloud Computing</span>
+                  <span class="interest-tag">🐧 Linux Administration</span>
+                  <span class="interest-tag">🚀 DevOps Engineering</span>
+                  <span class="interest-tag">🏢 IT Infrastructure</span>
+                  <span class="interest-tag">🔒 Cloud Security</span>
+                  <span class="interest-tag">📦 Microservices</span>
+                </div>
+              </div>
+
+              <div class="interest-block">
+                <h4 class="sub-interest-title">Personal Skills</h4>
+                <div class="tag-cloud">
+                  <span class="personal-tag">⚡ Problem Solving & Quick Learner</span>
+                  <span class="personal-tag">🤝 Team Collaboration</span>
+                  <span class="personal-tag">💬 Effective Communication</span>
+                  <span class="personal-tag">⏱️ Diligent Time Management</span>
+                  <span class="personal-tag">🎯 Continuous Upskilling</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDENTIALS & CERTIFICATIONS -->
+    <section class="section certifications-section" id="certifications">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Credentials</span>
+          <h2 class="section-title">Professional Qualifications & Certifications</h2>
+          <p class="section-subtitle">Formalized industry diplomas and intensive cloud training</p>
+        </div>
+
+        <div class="certs-grid">
+          <!-- Jetking Diploma -->
+          <div class="cert-card glass-panel">
+            <div class="cert-badge-glow"></div>
+            <div class="cert-header">
+              <div class="cert-icon-frame">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="8" r="7"></circle>
+                  <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                </svg>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-year">2026 Completed</span>
+                <span class="cert-status-badge">Certified</span>
+              </div>
+            </div>
+
+            <h3 class="cert-title">Jetking Diploma in Cloud Computing with AI (JK-CCCE)</h3>
+            <p class="cert-issuer">Jetking, Noida New Learning Centre</p>
+
+            <p class="cert-desc">
+              Comprehensive diploma program combining modern cloud computing principles with artificial intelligence workflows, 
+              focusing on production virtualization, enterprise network routing, server security, and automated cloud systems.
+            </p>
+
+            <div class="cert-tags">
+              <span class="cert-pill">Cloud Computing</span>
+              <span class="cert-pill">AI Integration</span>
+              <span class="cert-pill">Virtualization</span>
+              <span class="cert-pill">Enterprise Systems</span>
+            </div>
+          </div>
+
+          <!-- Fluxti Technologies -->
+          <div class="cert-card glass-panel">
+            <div class="cert-badge-glow"></div>
+            <div class="cert-header">
+              <div class="cert-icon-frame icon-frame-amber">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+              </div>
+              <div class="cert-meta">
+                <span class="cert-year">2026 Completed</span>
+                <span class="cert-status-badge badge-amber">Certified</span>
+              </div>
+            </div>
+
+            <h3 class="cert-title">Cloud & DevOps Professional Training</h3>
+            <p class="cert-issuer">Fluxti Technologies</p>
+
+            <p class="cert-desc">
+              Rigorous, project-driven hands-on training covering Amazon Web Services (AWS), Linux command-line architecture, 
+              Terraform declarative provisioning, Docker container management, and continuous integration/delivery best practices.
+            </p>
+
+            <div class="cert-tags">
+              <span class="cert-pill">AWS Practical Labs</span>
+              <span class="cert-pill">Terraform IaC</span>
+              <span class="cert-pill">Linux Systems</span>
+              <span class="cert-pill">DevOps Pipelines</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACADEMIC QUALIFICATIONS -->
+    <section class="section education-section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Education</span>
+          <h2 class="section-title">Academic Qualifications</h2>
+          <p class="section-subtitle">Continuous higher education and formal foundational degrees</p>
+        </div>
+
+        <div class="academic-timeline">
+          <!-- BCA -->
+          <div class="academic-card glass-panel current-degree">
+            <div class="academic-year-badge">2025 – 2028</div>
+            <div class="academic-content">
+              <div class="degree-title-row">
+                <h3 class="degree-name">Bachelor of Computer Applications (BCA)</h3>
+                <span class="status-pill current">Pursuing • 2nd Year</span>
+              </div>
+              <p class="institution">University / College in Patna, Bihar</p>
+              <p class="degree-desc">
+                Core computer science curriculum covering object-oriented programming, data structures, database management systems (DBMS), operating systems, computer networks, and software engineering methodologies.
+              </p>
+            </div>
+          </div>
+
+          <!-- 12th -->
+          <div class="academic-card glass-panel">
+            <div class="academic-year-badge">2025</div>
+            <div class="academic-content">
+              <div class="degree-title-row">
+                <h3 class="degree-name">Senior Secondary (Class 12th)</h3>
+                <span class="status-pill completed">Completed</span>
+              </div>
+              <p class="institution">Bihar School Examination Board (BIHAR BOARD)</p>
+              <p class="degree-desc">
+                Higher secondary academic education with focus on mathematics, logic, and analytical problem-solving skills.
+              </p>
+            </div>
+          </div>
+
+          <!-- 10th -->
+          <div class="academic-card glass-panel">
+            <div class="academic-year-badge">2023</div>
+            <div class="academic-content">
+              <div class="degree-title-row">
+                <h3 class="degree-name">Secondary School Certificate (Class 10th)</h3>
+                <span class="status-pill completed">Completed</span>
+              </div>
+              <p class="institution">Bihar School Examination Board (BIHAR BOARD)</p>
+              <p class="degree-desc">
+                Comprehensive secondary education with strong foundational academic credentials.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE CLI TERMINAL -->
+    <section class="section terminal-section" id="terminal-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Interactive CLI</span>
+          <h2 class="section-title">Developer & Cloud Terminal</h2>
+          <p class="section-subtitle">Type bash & cloud commands or click shortcut chips to query Sanna's CV directly</p>
+        </div>
+
+        <div class="terminal-wrapper glass-panel">
+          <!-- Terminal Title Bar -->
+          <div class="cli-top-bar">
+            <div class="cli-controls">
+              <span class="cli-dot red"></span>
+              <span class="cli-dot yellow"></span>
+              <span class="cli-dot green"></span>
+            </div>
+            <div class="cli-session-title">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              <span>sanna@aws-cloud-bastion: ~ (bash)</span>
+            </div>
+            <div class="cli-actions">
+              <button class="cli-icon-btn" onclick="app.clearTerminal()" title="Clear Terminal">
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                <span>Clear</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Clickable Command Quick Chips -->
+          <div class="cli-quick-chips">
+            <span class="chips-label">Try commands:</span>
+            <button class="chip-cmd" onclick="app.runCommandFromChip('help')">help</button>
+            <button class="chip-cmd" onclick="app.runCommandFromChip('whoami')">whoami</button>
+            <button class="chip-cmd" onclick="app.runCommandFromChip('experience')">experience</button>
+            <button class="chip-cmd" onclick="app.runCommandFromChip('projects')">projects</button>
+            <button class="chip-cmd" onclick="app.runCommandFromChip('aws services')">aws services</button>
+            <button class="chip-cmd" onclick="app.runCommandFromChip('terraform plan')">terraform plan</button>
+            <button class="chip-cmd" onclick="app.runCommandFromChip('certifications')">certifications</button>
+            <button class="chip-cmd" onclick="app.runCommandFromChip('contact')">contact</button>
+          </div>
+
+          <!-- Terminal Output Screen -->
+          <div class="cli-screen" id="cliScreen">
+            <div class="cli-history" id="cliHistory">
+              <!-- Welcome Banner -->
+              <div class="cli-line text-cyan font-bold">
+                ===========================================================<br>
+                SANNA KHAN - CLOUD & DEVOPS ENGINEER BASH SHELL (v2.6)<br>
+                Amazon Intern | AWS | Linux | Terraform | Docker<br>
+                ===========================================================
+              </div>
+              <div class="cli-line text-muted">
+                Type <span class="text-amber">'help'</span> to view available commands, or click any chip above.
+              </div>
+            </div>
+
+            <!-- Terminal Interactive Input Prompt -->
+            <div class="cli-input-line">
+              <span class="cli-prompt-user">sanna@cloud-ops</span><span class="cli-prompt-sep">:</span><span class="cli-prompt-path">~</span><span class="cli-prompt-symbol">$</span>
+              <input type="text" id="cliInput" class="cli-input" placeholder="Type a command (e.g. help, whoami)..." autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Let's Connect</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Interested in discussing opportunities, cloud architecture, or hiring? Let's talk.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Details -->
+          <div class="contact-info-panel glass-panel">
+            <h3 class="panel-heading">Direct Contact Information</h3>
+            <p class="panel-sub">Feel free to reach out via email, phone, or messaging. Currently open to Cloud, DevOps, and Infrastructure roles.</p>
+
+            <div class="contact-items">
+              <a href="mailto:sannak9411@gmail.com" class="contact-card">
+                <div class="contact-card-icon icon-cyan">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="contact-card-body">
+                  <span class="contact-label">Email Address</span>
+                  <span class="contact-value">sannak9411@gmail.com</span>
+                </div>
+                <button class="copy-action-btn" onclick="event.preventDefault(); app.copyEmail();" title="Copy Email">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </a>
+
+              <a href="tel:+918509356031" class="contact-card">
+                <div class="contact-card-icon icon-green">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="contact-card-body">
+                  <span class="contact-label">Phone & WhatsApp</span>
+                  <span class="contact-value">+91 8509356031</span>
+                </div>
+              </a>
+
+              <div class="contact-card location-card">
+                <div class="contact-card-icon icon-amber">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="contact-card-body">
+                  <span class="contact-label">Current Location</span>
+                  <span class="contact-value">South Delhi East Jhori Farm Jamia Nagar, New Delhi 110025</span>
+                </div>
+              </div>
+
+              <div class="contact-card location-card">
+                <div class="contact-card-icon icon-purple">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                </div>
+                <div class="contact-card-body">
+                  <span class="contact-label">Permanent Hometown</span>
+                  <span class="contact-value">Motihari East Champaran, Bihar 845417</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Download CV Card -->
+            <div class="resume-cta-box">
+              <div class="cta-box-text">
+                <strong>Need an official copy of Sanna's Resume?</strong>
+                <span>View, print, or download a clean formal document.</span>
+              </div>
+              <button class="btn btn-primary btn-sm" id="downloadCvBtn">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Preview Resume</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Interactive Message Form -->
+          <div class="contact-form-panel glass-panel">
+            <h3 class="panel-heading">Send a Direct Message</h3>
+            <p class="panel-sub">Leave a message and it will open directly in your mail client or notify immediately.</p>
+
+            <form id="contactForm" class="contact-form">
+              <div class="form-group">
+                <label for="senderName" class="form-label">Your Name</label>
+                <input type="text" id="senderName" class="form-input" placeholder="e.g. Alex Sharma / Hiring Manager" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderEmail" class="form-label">Your Email</label>
+                <input type="email" id="senderEmail" class="form-input" placeholder="alex@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderSubject" class="form-label">Subject / Role Opportunity</label>
+                <input type="text" id="senderSubject" class="form-input" placeholder="Cloud / DevOps Opportunity" required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderMessage" class="form-label">Message</label>
+                <textarea id="senderMessage" class="form-textarea" rows="4" placeholder="Hi Sanna, we were impressed by your Amazon internship and AWS expertise..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="sendMessageBtn">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-logo">SANNA KHAN</span>
+        <span class="footer-desc">Cloud & DevOps Engineer • Aspiring Cloud Architect</span>
+      </div>
+      <div class="footer-nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-right">
+        <button class="back-to-top-btn" id="backToTopBtn" aria-label="Back to top">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+        </button>
+        <span class="copyright">© 2026 Sanna Khan. Engineered for High Availability.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROJECT ARCHITECTURE & CODE MODAL -->
+  <div class="modal-overlay" id="projectModal" aria-hidden="true">
+    <div class="modal-card modal-project-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3 id="projModalTitle">Project Architecture & Implementation</h3>
+          <span class="modal-badge" id="projModalBadge">Terraform IaC</span>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-close-btn" id="closeProjModalBtn" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body proj-modal-body">
+        <div class="proj-modal-content" id="projModalContent">
+          <!-- Dynamic content populated by app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUME MODAL -->
+  <div class="modal-overlay" id="resumeModal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3>Resume Summary • Sanna Khan</h3>
+          <span class="modal-badge">Cloud & DevOps Engineer</span>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-primary btn-sm" onclick="window.print()">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            <span>Print / Save PDF</span>
+          </button>
+          <button class="modal-close-btn" id="closeModalBtn" aria-label="Close modal">&times;</button>
+        </div>
+      </div>
+
+      <div class="modal-body print-area">
+        <div class="resume-sheet">
+          <div class="res-header">
+            <h1 class="res-name">SANNA KHAN</h1>
+            <p class="res-contact-line">
+              South Delhi East Jhori Farm Jamia Nagar, New Delhi 110025<br>
+              E-Mail: <a href="mailto:sannak9411@gmail.com">sannak9411@gmail.com</a> | Contact No: +91 8509356031
+            </p>
+          </div>
+
+          <div class="res-section">
+            <h2 class="res-heading">CAREER OBJECTIVE</h2>
+            <p class="res-text">
+              Motivated BCA student and aspiring Cloud Engineer with a strong interest in Cloud Computing, AWS, Linux, Networking, and DevOps. Seeking an entry-level opportunity where I can apply my technical knowledge, develop practical industry skills, and contribute to the organization while continuously learning and growing as a Cloud/DevOps professional.
+            </p>
+          </div>
+
+          <div class="res-section">
+            <h2 class="res-heading">EXPERIENCE</h2>
+            <div class="res-job">
+              <div class="res-job-header">
+                <strong>Amazon</strong>
+                <span class="res-date">January 2026 – June 2026</span>
+              </div>
+              <div class="res-role-title">Cloud and DevOps Intern</div>
+              <ul class="res-bullets">
+                <li>Assisted in provisioning, configuring, and managing AWS cloud infrastructure components.</li>
+                <li>Supported the engineering team with CI/CD pipelines, Docker containerization, and writing basic Terraform scripts for Infrastructure as Code (IaC).</li>
+                <li>Performed routine Linux server administration and basic system troubleshooting to ensure optimal performance.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="res-section">
+            <h2 class="res-heading">TECHNICAL SKILLS</h2>
+            <ul class="res-bullets no-bullet-indent">
+              <li><strong>Cloud Computing:</strong> AWS (EC2, S3, IAM, VPC, EBS, RDS, ALB, Auto Scaling, Route 53, CloudWatch)</li>
+              <li><strong>DevOps & Server:</strong> Terraform, Git, GitHub, Docker, CI/CD Basics, Server Fundamentals, Apache, Nginx</li>
+              <li><strong>Linux:</strong> Linux Administration, File & Directory Management, User Management, Permissions, Package Management, Basic Shell Commands & Troubleshooting</li>
+              <li><strong>Networking:</strong> Fundamentals, TCP/IP, IP Configuration, OSI Model, DNS, DHCP, NAT, Subnetting, Basic Knowledge of Routers & Switches</li>
+              <li><strong>Virtualization & OS:</strong> Virtual Machines, Virtualization Basics, Windows OS Installation & Configuration</li>
+              <li><strong>Troubleshooting:</strong> Hardware & Software Troubleshooting, System Configuration, BIOS Diagnosis</li>
+            </ul>
+          </div>
+
+          <div class="res-section">
+            <h2 class="res-heading">PROFESSIONAL QUALIFICATIONS</h2>
+            <ul class="res-bullets">
+              <li><strong>2026:</strong> Completed Cloud & DevOps Training from Fluxti Technologies, with hands-on learning in AWS, Linux, Terraform, and DevOps tools.</li>
+              <li><strong>2026:</strong> Completed Jetking Diploma in Cloud Computing with AI (JK-CCCE) from Jetking, Noida New Learning Centre.</li>
+            </ul>
+          </div>
+
+          <div class="res-section">
+            <h2 class="res-heading">ACADEMIC QUALIFICATIONS</h2>
+            <ul class="res-bullets">
+              <li><strong>2025–2028:</strong> Pursuing BCA (2nd Year) | PATNA.</li>
+              <li><strong>2025:</strong> Completed Class 12th from BIHAR BOARD, BIHAR.</li>
+              <li><strong>2023:</strong> Completed Class 10th from BIHAR BOARD, BIHAR.</li>
+            </ul>
+          </div>
+
+          <div class="res-two-col">
+            <div class="res-col">
+              <h2 class="res-heading">AREAS OF INTEREST</h2>
+              <ul class="res-bullets">
+                <li>Cloud Computing</li>
+                <li>Linux Administration</li>
+                <li>DevOps</li>
+                <li>IT Infrastructure</li>
+              </ul>
+            </div>
+            <div class="res-col">
+              <h2 class="res-heading">PERSONAL SKILLS</h2>
+              <ul class="res-bullets">
+                <li>Problem Solving & Quick Learner</li>
+                <li>Team Collaboration</li>
+                <li>Communication Skills</li>
+                <li>Time Management</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="res-section">
+            <h2 class="res-heading">PERSONAL DETAILS</h2>
+            <p class="res-text">
+              <strong>Permanent Address:</strong> Motihari East Champaran Bihar, 845417<br>
+              <strong>Father's Name:</strong> Mojahid Khan
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
